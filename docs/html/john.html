@@ -49,14 +49,17 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Cours</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-quoi-sert-john">1.1. A quoi sert John ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#comment-lancer-l-attaque-brute-force-avec-john">1.2. Comment lancer l’attaque brute force avec John ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#entrainement-et-mise-en-situation-reelle">1.3. Entrainement et mise en situation réelle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#que-devez-vous-faire">1.3.1. Que devez-vous faire ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#objectifs">1.3.2. Objectifs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#situation">1.3.2.1. Situation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#que-faire">1.3.2.2. Que faire ?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#video-de-resolution">1.3.3. Vidéo de résolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#challenge">2. Challenge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#entrainement-et-mise-en-situation-reelle">2.1. Entrainement et mise en situation réelle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#que-devez-vous-faire">2.1.1. Que devez-vous faire ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objectifs">2.1.2. Objectifs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#situation">2.1.2.1. Situation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#que-faire">2.1.2.2. Que faire ?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#video-de-resolution">2.1.3. Vidéo de résolution</a></li>
 </ul>
 </li>
 </ul>
@@ -127,11 +130,14 @@
 </div>
 <p>Ainsi cette ligne demande à john de calculer tous les hash des mots contenus dans liste.txt et de le comparer au hash de la session. Si les deux hashes sont les mêmes, alors le mot de passe est trouvé et John s’arrête.</p>
 </section>
+</section>
+<section id="challenge">
+<h1><span class="section-number">2. </span>Challenge<a class="headerlink" href="#challenge" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="entrainement-et-mise-en-situation-reelle">
-<h2><span class="section-number">1.3. </span>Entrainement et mise en situation réelle<a class="headerlink" href="#entrainement-et-mise-en-situation-reelle" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.1. </span>Entrainement et mise en situation réelle<a class="headerlink" href="#entrainement-et-mise-en-situation-reelle" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour voir si vous avez bien compris le cours, je vous propose de vous entrainer sur un docker que j’ai créé spécialement pour cela.</p>
 <section id="que-devez-vous-faire">
-<h3><span class="section-number">1.3.1. </span>Que devez-vous faire ?<a class="headerlink" href="#que-devez-vous-faire" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.1. </span>Que devez-vous faire ?<a class="headerlink" href="#que-devez-vous-faire" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il vous faut docker installé (il existe tout un tas de tutoriels qui vous expliquerons comment le télécharger)
 quand docker et docker-compose sont installés sur votre machine, nous pouvons passer à la suite :</p>
 <p>Il vous faut télécharger le fichier <a class="reference download internal" download="" href="_downloads/679bf297646da81b0048d270b978de29/docker-compose.yml"><span class="xref download myst">docker-compose.yml</span></a></p>
@@ -144,13 +150,13 @@ quand docker et docker-compose sont installés sur votre machine, nous pouvons p
 <p>La première commande vous permet de créer les deux machines dont vous aurez besoin. La machine de martin correspond à la machine victime et la machine john à celle de l’attaque qui possède l’outil john installé dessus.</p>
 </section>
 <section id="objectifs">
-<h3><span class="section-number">1.3.2. </span>Objectifs<a class="headerlink" href="#objectifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.2. </span>Objectifs<a class="headerlink" href="#objectifs" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="situation">
-<h4><span class="section-number">1.3.2.1. </span>Situation<a class="headerlink" href="#situation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.1.2.1. </span>Situation<a class="headerlink" href="#situation" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Martin veut mettre sa machine à jour avec <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">update</span></code>, mais pour cela il doit être root sur sa machine. Malheureusement il ne connait pas son mot de passe administrateur car c’est son ami Jeremy qui a configuré sa machine ! Ce dernier ne se souvient plus du tout du mot de passe non plus :( Arriverez-vous à trouver le mot de passe administrateur de cette machine pour la mettre à jour ?</p>
 </section>
 <section id="que-faire">
-<h4><span class="section-number">1.3.2.2. </span>Que faire ?<a class="headerlink" href="#que-faire" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.1.2.2. </span>Que faire ?<a class="headerlink" href="#que-faire" title="Lien permanent vers cette rubrique"></a></h4>
 <ul class="simple">
 <li><p>Récupérer les mots de passe hachés de session</p></li>
 <li><p>Cracker le hash avec John d’une session susceptible d’avoir les accès root</p></li>
@@ -161,7 +167,7 @@ quand docker et docker-compose sont installés sur votre machine, nous pouvons p
 </section>
 </section>
 <section id="video-de-resolution">
-<h3><span class="section-number">1.3.3. </span>Vidéo de résolution<a class="headerlink" href="#video-de-resolution" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.3. </span>Vidéo de résolution<a class="headerlink" href="#video-de-resolution" title="Lien permanent vers cette rubrique"></a></h3>
 <p><a class="reference external" href="https://youtu.be/5X0gQ5gLaO0">vidéo youtube</a></p>
 </section>
 </section>
