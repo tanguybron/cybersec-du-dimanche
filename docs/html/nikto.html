@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Nikto &mdash; Documentation cybersec-du-dimanche 0.0</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="1. John the Ripper" href="john.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> cybersec-du-dimanche
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Exiftool</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="exif.html">1. Exiftool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">John the Ripper</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="john.html">1. John the Ripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Nikto</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Nikto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cours">1.1. Cours</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-que-nikto">1.1.1. Qu’est ce que Nikto ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#que-peut-il-nous-donner-comme-informations">1.1.2. Que peut-il nous donner comme informations ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-telecharger-nikto">1.1.3. Comment télécharger Nikto ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-nikto">1.1.4. Comment utiliser Nikto ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#challenge">1.2. Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objectif-du-challenge">1.2.1. Objectif du challenge :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#que-faut-il-faire">1.2.2. Que faut-il faire ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cybersec-du-dimanche</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Nikto</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/nikto.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nikto">
+<h1><span class="section-number">1. </span>Nikto<a class="headerlink" href="#nikto" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="cours">
+<h2><span class="section-number">1.1. </span>Cours<a class="headerlink" href="#cours" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="quest-ce-que-nikto">
+<h3><span class="section-number">1.1.1. </span>Qu’est ce que Nikto ?<a class="headerlink" href="#quest-ce-que-nikto" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Nikto est une application open source créée en 2001 qui permet de scanner des serveurs web. Il permettra de donner des informations sur de potentielle vulnérabilités par exemple.</p>
+</section>
+<section id="que-peut-il-nous-donner-comme-informations">
+<h3><span class="section-number">1.1.2. </span>Que peut-il nous donner comme informations ?<a class="headerlink" href="#que-peut-il-nous-donner-comme-informations" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Nikto est capable de :</p>
+<ul class="simple">
+<li><p>trouver des injections SQL,XSS et autres types de vulnérabilité.</p></li>
+<li><p>Deviner des sous-domaines</p></li>
+<li><p>Sauvegarder des rapport dans des fichier HTML,CSV ou XML</p></li>
+<li><p>Identifier les logiciels installés</p></li>
+<li><p>Exporter vers Metasploit</p></li>
+<li><p>Deviner des identifiants/mot de passe faciles à trouver</p></li>
+</ul>
+</section>
+<section id="comment-telecharger-nikto">
+<h3><span class="section-number">1.1.3. </span>Comment télécharger Nikto ?<a class="headerlink" href="#comment-telecharger-nikto" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Comme beaucoup d’outils de pentesting, Nikto est présent par défaut sur Kali Linux.
+Si vous avez une autre distribution Linux (debian) vous pourrez l’installer par la commande <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">nikto</span></code>. Sinon, vous pouvez vous rendre sur Github : https://github.com/sullo/nikto</p>
+</section>
+<section id="comment-utiliser-nikto">
+<h3><span class="section-number">1.1.4. </span>Comment utiliser Nikto ?<a class="headerlink" href="#comment-utiliser-nikto" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour voir toutes les possibilités et commandes de nikto, la première commande à taper est :</p>
+<p><code class="docutils literal notranslate"><span class="pre">nikto</span> <span class="pre">-Help</span></code>.</p>
+<p>Vous verrez tout un tas d’options expliquées par la suite. La plus simple et la plus utilisée sera la commande :
+<code class="docutils literal notranslate"><span class="pre">nikto</span> <span class="pre">-h</span> <span class="pre">&lt;target&gt;</span></code> en remplaçant la target par une adresse ip ou un nom de domaine.</p>
+<p>D’autres options complémentaires pourront s’ajouter à cette commande telles que : <code class="docutils literal notranslate"><span class="pre">-id</span></code> qui servira à renseigner une combinaison <code class="docutils literal notranslate"><span class="pre">identifiant:motdepasse</span></code> pour se connecter sur la cible, ou encore   <code class="docutils literal notranslate"><span class="pre">-mutate</span></code> pour découvrir de nouveaux fichiers ou dossiers cachés.</p>
+<p>Si l’on veut scanner un domaine en https, il faudra ajouter le tag <code class="docutils literal notranslate"><span class="pre">-ssl</span></code> pour scanner le port 443.</p>
+<p>Il est aussi possible de scanner plusieurs adresses IP en même temps. Par exemple en les mettant dans un fichier texte et en tapant la commande : <code class="docutils literal notranslate"><span class="pre">nikto</span> <span class="pre">-h</span> <span class="pre">adresses.txt</span></code></p>
+</section>
+</section>
+<section id="challenge">
+<h2><span class="section-number">1.2. </span>Challenge<a class="headerlink" href="#challenge" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="objectif-du-challenge">
+<h3><span class="section-number">1.2.1. </span>Objectif du challenge :<a class="headerlink" href="#objectif-du-challenge" title="Lien permanent vers cette rubrique"></a></h3>
+<p>trouver le numéro OSVDB de la potentielle vulnérabilité de la machine docker déployée.</p>
+</section>
+<section id="que-faut-il-faire">
+<h3><span class="section-number">1.2.2. </span>Que faut-il faire ?<a class="headerlink" href="#que-faut-il-faire" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Récupérer les machines :</p>
+<ul class="simple">
+<li><p>Télécharger le fichier <a class="reference download internal" download="" href="_downloads/6aa47e24b82305bd47a8f84e88658377/docker-compose.yml"><span class="xref download myst">docker-compose.yml</span></a></p></li>
+<li><p>Déployer et utiliser les machines :</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker-compose up -d</span>
+<span class="go">docker exec -it nikto_machine /bin/bash</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Analyser la machine avec nikto et lire le numéro OSVDB de la vulnérabilité trouvée.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="john.html" class="btn btn-neutral float-left" title="1. John the Ripper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Tanguy BRON.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

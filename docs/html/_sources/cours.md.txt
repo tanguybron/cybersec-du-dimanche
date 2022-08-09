@@ -38,6 +38,7 @@ L'image a été trouvée sur le site :
 [freepng.com](https://en.freejpg.com.ar/free/info/100031658/milky-way-pine-forest-night-dawn)
 puis les métadonnées ont été modifiées pour ce challenge.
 
+
 # John the Ripper
 
 ![image john](images/john-logo.png)
@@ -336,4 +337,4 @@ antivirus n’est pas donné à tout le monde.
 
 Sources :
 
-Vidéo YouTube qui présente très bien tous ces problèmes : [voir la vidéo Youtube](https://www.youtube.com/watch?v=2H_1ZkZ83gI&t=131s){:target="_blank"}
+Vidéo YouTube qui présente très bien tous ces problèmes : [voir la vidéo Youtube](https://www.youtube.com/watch?v=2H_1ZkZ83gI&t=131s)
