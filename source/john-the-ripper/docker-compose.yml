@@ -1,0 +1,13 @@
+services:
+  John:
+    container_name: john
+    image: tanguybron/johntheripper:john_machine
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  Martin:
+    container_name: martin
+    image: tanguybron/johntheripper:martin_machine
+    stdin_open: true
+    tty: true
+    restart: unless-stopped

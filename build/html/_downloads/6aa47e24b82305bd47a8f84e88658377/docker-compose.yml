@@ -1,0 +1,29 @@
+services:
+  webserver:
+    container_name: webServer
+    image: tanguybron/nikto:webserver
+    stdin_open: true
+    tty: true
+    restart: always
+    ports:
+        - 80
+    networks:
+      nikto_network:
+        ipv4_address: 10.5.0.2
+  nikto_machine:
+    container_name: nikto_machine
+    image: tanguybron/nikto:nikto_machine
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      nikto_network:
+        ipv4_address: 10.5.0.3
+
+networks:
+  nikto_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
