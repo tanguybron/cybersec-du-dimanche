@@ -1,6 +1,4 @@
-# Virus encoders
-
-## Msfvenom : est-il possible de tromper l'antivirus ?
+# Msfvenom : est-il possible de tromper l'antivirus ?
 
 msfvenom est un outil de création de payloads (charge utile en français).
 

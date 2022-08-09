@@ -34,6 +34,8 @@ john -w=liste.txt mdp.hashes
 
 Ainsi cette ligne demande à john de calculer tous les hash des mots contenus dans liste.txt et de le comparer au hash de la session. Si les deux hashes sont les mêmes, alors le mot de passe est trouvé et John s’arrête.
 
+# Challenge
+
 ## Entrainement et mise en situation réelle
 
 Pour voir si vous avez bien compris le cours, je vous propose de vous entrainer sur un docker que j'ai créé spécialement pour cela.
