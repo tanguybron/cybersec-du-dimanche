@@ -17,35 +17,29 @@ https://hub.docker.com/u/tanguybron
 
 .. toctree::
     :numbered:
-    :caption: Exiftool
+    :caption: Stéganographie
     :hidden:
 
     exif
 
 .. toctree::
     :numbered:
-    :caption: John the Ripper
+    :caption: Brute Force
     :hidden:
 
     john
 
 .. toctree::
     :numbered:
-    :caption: Nikto
+    :caption: Reconnaissance / Test de vulnérabilité
     :hidden:
 
     nikto
 
 .. toctree::
     :numbered:
-    :caption: Reverse Shell
+    :caption: Exploitation de failles
     :hidden:
 
     reverse
-
-.. toctree::
-    :numbered:
-    :caption: Virus Encoders
-    :hidden:
-
     virusencoders
