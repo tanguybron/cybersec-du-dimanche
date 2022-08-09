@@ -31,7 +31,7 @@ https://hub.docker.com/u/tanguybron
 
 .. toctree::
     :numbered:
-    :caption: Reconnaissance / Test de vulnérabilité
+    :caption: Reconnaissance
     :hidden:
 
     nikto
