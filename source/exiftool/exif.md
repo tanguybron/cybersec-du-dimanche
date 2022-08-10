@@ -31,7 +31,7 @@ Vous pouvez retrouver tous les types de fichiers compatibles avec exiftool sur l
 
 ### Trouver le pseudo de l'artiste de l'image suivante : 
 
-![image exif](images/exifimg.jpg)
+![image exif](./images/exifimg.jpg)
 
 ### Source image : 
 L'image a été trouvée sur le site : 
