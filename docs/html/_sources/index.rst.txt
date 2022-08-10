@@ -20,27 +20,27 @@ https://hub.docker.com/u/tanguybron
     :caption: Stéganographie
     :hidden:
 
-    ./exiftool/exif
+    exiftool/exif
 
 .. toctree::
     :numbered:
     :caption: Brute Force
     :hidden:
 
-    ./john-the-ripper/john
+    john-the-ripper/john
 
 .. toctree::
     :numbered:
     :caption: Reconnaissance
     :hidden:
 
-    ./nikto/nikto
+    nikto/nikto
 
 .. toctree::
     :numbered:
     :caption: Exploitation de failles
     :hidden:
 
-    ./reverse-shell/reverse
-    ./virusencoders/virusencoders
-    ./MITM/mitm
+    reverse-shell/reverse
+    virusencoders/virusencoders
+    MITM/mitm

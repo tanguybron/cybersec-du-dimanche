@@ -29,5 +29,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'sticky_navigation': True,
+    'navigation_depth': -1,
+    'includehidden': True,
 }
 html_static_path = ['_static']
