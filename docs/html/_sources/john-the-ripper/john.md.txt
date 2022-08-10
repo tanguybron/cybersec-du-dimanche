@@ -47,7 +47,7 @@ Pour voir si vous avez bien compris le cours, je vous propose de vous entrainer 
 Il vous faut docker installé (il existe tout un tas de tutoriels qui vous expliquerons comment le télécharger)
 quand docker et docker-compose sont installés sur votre machine, nous pouvons passer à la suite : 
 
-Il vous faut télécharger le fichier [docker-compose.yml](./john-the-ripper/docker-compose.yml)
+Il vous faut télécharger le fichier [docker-compose.yml](./docker-compose.yml)
 
 Ensuite, il vous restera quelques commandes à connaître : 
 

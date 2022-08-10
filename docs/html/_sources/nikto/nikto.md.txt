@@ -40,7 +40,7 @@ trouver le numéro OSVDB de la potentielle vulnérabilité de la machine docker 
 ### Que faut-il faire ?
 Récupérer les machines : 
 
-* Télécharger le fichier [docker-compose.yml](./nikto//docker-compose.yml)
+* Télécharger le fichier [docker-compose.yml](./docker-compose.yml)
 
 * Déployer et utiliser les machines : 
 
