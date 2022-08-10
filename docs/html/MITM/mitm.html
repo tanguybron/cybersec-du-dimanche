@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Man In The Middle &mdash; Documentation cybersec-du-dimanche 0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="2. Virus Encoders" href="../virusencoders/virusencoders.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> cybersec-du-dimanche
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Stéganographie</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exiftool/exif.html">1. Exiftool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Brute Force</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../john-the-ripper/john.html">1. John the Ripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reconnaissance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nikto/nikto.html">1. Nikto</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploitation de failles</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../reverse-shell/reverse.html">1. Reverse Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">2. Virus Encoders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Man In The Middle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cours">3.1. Cours</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-protocole-arp-et-les-tables-arp">3.1.1. Comprendre le protocole ARP et les tables ARP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque">3.1.2. Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cybersec-du-dimanche</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">3. </span>Man In The Middle</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MITM/mitm.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="man-in-the-middle">
+<h1><span class="section-number">3. </span>Man In The Middle<a class="headerlink" href="#man-in-the-middle" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="cours">
+<h2><span class="section-number">3.1. </span>Cours<a class="headerlink" href="#cours" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="comprendre-le-protocole-arp-et-les-tables-arp">
+<h3><span class="section-number">3.1.1. </span>Comprendre le protocole ARP et les tables ARP<a class="headerlink" href="#comprendre-le-protocole-arp-et-les-tables-arp" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour comprendre l’attaque MITM (Man in the middle), il faut comprendre simplement le protocole ARP.</p>
+<p>Tout ce que vous devez savoir c’est que chaque machine du réseau possède un cache ARP. Comme son nom l’indique, c’est un cache, il est donc temporaire.
+Le cache ARP consiste en une correspondance entre les adresses IP et les adresses MAC des machines du réseau. Ces correspondances sont rangées dans des tables ARP.</p>
+<p>Exemple de table ARP :</p>
+<p><img alt="image open" src="../_images/cache_arp.png" />
+Ci-dessus, deux commandes qui affichent les correspondances entre 2 ip du réseau et leur adresse MAC. On voit que l’adresse 10.5.0.1 a pour adresse MAC 02:42:8c:d5:51:03.</p>
+<p>A ce stade, vous devriez avoir compris ce qu’est une table ARP. Cependant, vous avez lu juste avant qu’ARP était un protocole… En effet, pour remplir ces tables ARP, la machine va envoyer des requêtes aux autres machines sur le réseau. Les requêtes envoyées sont tout simplement comme le dialogue qui suit :</p>
+<p>votre_machine : “qui à l’adresse 10.5.0.2 ?”
+machine_distante : “c’est moi, voici mon adresse MAC : 02:42:0a:05:00:02 !”</p>
+<p>Et ainsi la machine ajoute une ligne à sa table ARP.</p>
+<p>Lorsqu’une machine distante veut envoyer une requête à une destination, elle s’assure d’avoir un couple IP-MAC correct.</p>
+</section>
+<section id="comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque">
+<h3><span class="section-number">3.1.2. </span>Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque<a class="headerlink" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Le but de cette attaque est de tromper la machine victime en se faisant passer pour quelqu’un d’autre. Il faut ainsi envoyer des informations à une machine pour qu’il enregistre dans son cache ARP les mauvaises correspondances IP-MAC.</p>
+<p>Si on veut observer toutes les communications entre une machine et un routeur, il faut se placer entre les deux machines (d’où l’appellation Man in the Middle). On dit à la victime “c’est moi le routeur”, ainsi elle enverra ses paquets à la machine attaquante, qui les transmettra ensuite au routeur. Lorsqu’une réponse arrive du routeur, l’attaquant dit au routeur “c’est moi qui suis la machine qui a envoyé cette requête”, l’attaquant a donc la requête qu’il renvoie à la machine victime.
+Ce schéma résume bien l’attaque :</p>
+<p><img alt="image open" src="../_images/schema_MITM.png" />
+<em>source : https://dwisesoft.com/wp-content/uploads/2020/08/man-in-the-middle-attack.png</em></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../virusencoders/virusencoders.html" class="btn btn-neutral float-left" title="2. Virus Encoders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Tanguy BRON.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
