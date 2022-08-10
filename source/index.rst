@@ -1,4 +1,4 @@
-Cybersec du Dimanche
+Cybersec du Dimanche ☕
 ==========================
 
 Introduction :
