@@ -33,3 +33,4 @@ html_theme_options = {
     'includehidden': True,
 }
 html_static_path = ['_static']
+html_favicon = 'favicon.ico'
