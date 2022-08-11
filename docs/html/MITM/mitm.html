@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Man In The Middle &mdash; Documentation cybersec-du-dimanche 0.0</title>
+  <title>2. Man In The Middle &mdash; Documentation cybersec-du-dimanche 0.0</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -21,7 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="prev" title="2. Virus Encoders" href="../virusencoders/virusencoders.html" /> 
+    <link rel="next" title="1. Virus Encoders" href="../virusencoders/virusencoders.html" />
+    <link rel="prev" title="1. Reverse Shell" href="../reverse-shell/reverse.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,19 +55,22 @@
 <p class="caption" role="heading"><span class="caption-text">Exploitation de failles</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../reverse-shell/reverse.html">1. Reverse Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">2. Virus Encoders</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Man In The Middle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cours">3.1. Cours</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-protocole-arp-et-les-tables-arp">3.1.1. Comprendre le protocole ARP et les tables ARP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque">3.1.2. Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Man In The Middle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cours">2.1. Cours</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-protocole-arp-et-les-tables-arp">2.1.1. Comprendre le protocole ARP et les tables ARP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque">2.1.2. Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#tutoriel">3.2. Tutoriel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mitm-dans-un-environnement-dedie">3.2.1. MITM dans un environnement dédié</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutoriel">2.2. Tutoriel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mitm-dans-un-environnement-dedie">2.2.1. MITM dans un environnement dédié</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Virus / Malwares</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">1. Virus Encoders</a></li>
 </ul>
 
         </div>
@@ -83,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">3. </span>Man In The Middle</li>
+      <li><span class="section-number">2. </span>Man In The Middle</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/MITM/mitm.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -94,11 +98,11 @@
            <div itemprop="articleBody">
              
   <section id="man-in-the-middle">
-<h1><span class="section-number">3. </span>Man In The Middle<a class="headerlink" href="#man-in-the-middle" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">2. </span>Man In The Middle<a class="headerlink" href="#man-in-the-middle" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="cours">
-<h2><span class="section-number">3.1. </span>Cours<a class="headerlink" href="#cours" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.1. </span>Cours<a class="headerlink" href="#cours" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="comprendre-le-protocole-arp-et-les-tables-arp">
-<h3><span class="section-number">3.1.1. </span>Comprendre le protocole ARP et les tables ARP<a class="headerlink" href="#comprendre-le-protocole-arp-et-les-tables-arp" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.1. </span>Comprendre le protocole ARP et les tables ARP<a class="headerlink" href="#comprendre-le-protocole-arp-et-les-tables-arp" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Pour comprendre l’attaque MITM (Man in the middle), il faut comprendre simplement le protocole ARP.</p>
 <p>Tout ce que vous devez savoir c’est que chaque machine du réseau possède un cache ARP. Comme son nom l’indique, c’est un cache, il est donc temporaire.
 Le cache ARP consiste en une correspondance entre les adresses IP et les adresses MAC des machines du réseau. Ces correspondances sont rangées dans des tables ARP.</p>
@@ -112,7 +116,7 @@ machine_distante : “c’est moi, voici mon adresse MAC : 02:42:0a:05:00:02 !�
 <p>Lorsqu’une machine distante veut envoyer une requête à une destination, elle s’assure d’avoir un couple IP-MAC correct.</p>
 </section>
 <section id="comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque">
-<h3><span class="section-number">3.1.2. </span>Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque<a class="headerlink" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.2. </span>Comprendre le fonctionnement d’une MITM (Man in The Middle) attaque<a class="headerlink" href="#comprendre-le-fonctionnement-dune-mitm-man-in-the-middle-attaque" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le but de cette attaque est de tromper la machine victime en se faisant passer pour quelqu’un d’autre. Il faut ainsi envoyer des informations à une machine pour qu’il enregistre dans son cache ARP les mauvaises correspondances IP-MAC.</p>
 <p>Si on veut observer toutes les communications entre une machine et un routeur, il faut se placer entre les deux machines (d’où l’appellation Man in the Middle). On dit à la victime “c’est moi le routeur”, ainsi elle enverra ses paquets à la machine attaquante, qui les transmettra ensuite au routeur. Lorsqu’une réponse arrive du routeur, l’attaquant dit au routeur “c’est moi qui suis la machine qui a envoyé cette requête”, l’attaquant a donc la requête qu’il renvoie à la machine victime.
 Ce schéma résume bien l’attaque :</p>
@@ -121,9 +125,10 @@ Ce schéma résume bien l’attaque :</p>
 </section>
 </section>
 <section id="tutoriel">
-<h2><span class="section-number">3.2. </span>Tutoriel<a class="headerlink" href="#tutoriel" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.2. </span>Tutoriel<a class="headerlink" href="#tutoriel" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="mitm-dans-un-environnement-dedie">
-<h3><span class="section-number">3.2.1. </span>MITM dans un environnement dédié<a class="headerlink" href="#mitm-dans-un-environnement-dedie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.2.1. </span>MITM dans un environnement dédié<a class="headerlink" href="#mitm-dans-un-environnement-dedie" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : <a class="reference download internal" download="" href="../_downloads/d513ecdd373e16b75032b606b071f2f1/docker-compose.yml"><span class="xref download myst">docker-compose.yml</span></a></p>
 </section>
 </section>
 </section>
@@ -132,7 +137,8 @@ Ce schéma résume bien l’attaque :</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="../virusencoders/virusencoders.html" class="btn btn-neutral float-left" title="2. Virus Encoders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../reverse-shell/reverse.html" class="btn btn-neutral float-left" title="1. Reverse Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../virusencoders/virusencoders.html" class="btn btn-neutral float-right" title="1. Virus Encoders" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

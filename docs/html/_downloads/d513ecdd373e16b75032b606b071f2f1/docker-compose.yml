@@ -1,0 +1,28 @@
+version: "2"
+services:
+  machine_attaque:
+    container_name: attaquant
+    build: ./attaquant
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      MITM_network:
+        ipv4_address: 10.5.0.2
+  machine_victime:
+    container_name: victime
+    build: ./victime
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      MITM_network:
+        ipv4_address: 10.5.0.3
+
+networks:
+  MITM_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
