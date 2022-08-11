@@ -42,5 +42,11 @@ https://hub.docker.com/u/tanguybron
     :hidden:
 
     reverse-shell/reverse
-    virusencoders/virusencoders
     MITM/mitm
+
+.. toctree::
+    :numbered:
+    :caption: Virus / Malwares
+    :hidden:
+
+    virusencoders/virusencoders
