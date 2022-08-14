@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Introduction : Pourquoi utiliser Docker &mdash; Documentation cybersec-du-dimanche 0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="1. Exiftool" href="../exiftool/exif.html" />
+    <link rel="prev" title="Cybersec du Dimanche ☕" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> cybersec-du-dimanche
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Prise en main</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Introduction : Pourquoi utiliser Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#installation">2. Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stéganographie</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exiftool/exif.html">1. Exiftool</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Brute Force</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../john-the-ripper/john.html">1. John the Ripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reconnaissance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nikto/nikto.html">1. Nikto</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Exploitation de failles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-shell/reverse.html">1. Reverse Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MITM/mitm.html">2. Man In The Middle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Virus / Malwares</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../virusencoders/virusencoders.html">1. Virus Encoders</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cybersec-du-dimanche</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Introduction : Pourquoi utiliser Docker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/prise-en-main/docker.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-pourquoi-utiliser-docker">
+<h1><span class="section-number">1. </span>Introduction : Pourquoi utiliser Docker<a class="headerlink" href="#introduction-pourquoi-utiliser-docker" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Nous utilisons ici la technologie Docker car cette dernière vous permettra d’avoir des machines conçues exprès pour vous entrainer aux techniques de hacking/pentest.
+Grâce à cela, vous pourrez télécharger des machines avec les logiciels directement installés pour vous pour chaque session, ce qui vous évite de perdre du temps à l’installation lorsque vous lisez un tutoriel sur notre site. En effet, lorsqu’on lit un tutoriel n’importe où sur le web, la première chose que nous voulons faire est de tester sois-même. Nous sommes souvent frustrés par le temps que met l’installation, par les problèmes de compatibilité des machines, on a jamais la même machine que la personne qui propose le turoriel, etc.
+Docker nous évite tous ces problèmes puisque tout le monde téléchargera la même machine (image) et le tutoriel que nous proposerons sera lui aussi effectué sur ces mêmes machines.</p>
+</section>
+<section id="installation">
+<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Vite ! Maintenant que vous savez pourquoi il vous faut Docker, passons à l’installation !
+C’est le seul moment sur ce site où vous pourrez rencontrer des problèmes de compatibilité… Mais nous allons essayer de vous donner le plus de détails possible pour vous aider !</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Cybersec du Dimanche ☕" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../exiftool/exif.html" class="btn btn-neutral float-right" title="1. Exiftool" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Tanguy BRON.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D0E6P91J1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2D0E6P91J1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

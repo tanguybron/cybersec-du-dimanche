@@ -17,6 +17,13 @@ https://hub.docker.com/u/tanguybron
 
 .. toctree::
     :numbered:
+    :caption: Prise en main
+    :hidden:
+
+    prise-en-main/docker
+
+.. toctree::
+    :numbered:
     :caption: Stéganographie
     :hidden:
 
