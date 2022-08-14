@@ -43,10 +43,16 @@ Installation sur Linux
 
 Rendez-vous ici : https://docs.docker.com/desktop/install/linux-install/
 
-Vérifier son installation : 
-----------------------------
+Vérifier son installation
+--------------------------
 
 Pour vérifier que l'installation est faite, veillez ouvrir un Terminal/invite de commandes et taper la commande "docker". Si vous avez une réponse du type ```Usage:  docker [OPTIONS] COMMAND``` tout est bon. Sinon il vous faut revoir l'installation.
 
-Installation de docker-compose : 
----------------------------------
+Installation de docker-compose
+-------------------------------
+
+Pour faire fonctionner plusieurs machines ensemble, les faire communiquer entre elles, créer des réseaux, etc. Nous utilisons la technologie docker-compose qu'il vous faudra aussi installer pour que tout se passe bien sur le site :)
+
+Si pendant votre installation vous avez aussi installé l'application Docker Desktop, bien joué, vous devriez déjà avoir docker-compose !! (Sous Mac et Windows, vous devriez l'avoir installée).
+
+Si vous êtes sous Linux et que vous n'avez pas installé Docker Desktop, je vous propose d'aller ici : https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-linux-systems
