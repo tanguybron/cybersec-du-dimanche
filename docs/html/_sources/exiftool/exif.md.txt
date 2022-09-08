@@ -33,6 +33,15 @@ Vous pouvez retrouver tous les types de fichiers compatibles avec exiftool sur l
 
 ![image exif](./images/exifimg.jpg)
 
+Pour que cela soit plus simple, nous vous proposons d'utiliser une image docker avec l'outil exiftool intallé.
+Tapez la commande : 
+```shell
+	docker run -it tanguybron/exiftool_img
+```
+Vous aurez l'image directement dans votre home directory dès la connexion. Tapez la commande ```ls``` pour lister les fichiers et dossiers du répertoire courrant.
+
+Bonne chance !!
+
 ### Source image : 
 L'image a été trouvée sur le site : 
 [freepng.com](https://en.freejpg.com.ar/free/info/100031658/milky-way-pine-forest-night-dawn)
