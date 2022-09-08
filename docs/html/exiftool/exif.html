@@ -120,7 +120,7 @@
 <section id="comment-visionner-les-metadonnees-d-une-image">
 <h3><span class="section-number">1.1.3. </span>Comment visionner les Métadonnées d’une image ?<a class="headerlink" href="#comment-visionner-les-metadonnees-d-une-image" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Exiftool vous permet très facilement de lire ces métadonnées de vos photos :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>    exiftool &lt;image.jpg&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ exiftool &lt;image.jpg&gt;
 </pre></div>
 </div>
 </section>
@@ -141,7 +141,7 @@ Ainsi, même si l’image n’est pas compromettante en elle même, elle peut le
 <p><img alt="image exif" src="../_images/exifimg.jpg" /></p>
 <p>Pour que cela soit plus simple, nous vous proposons d’utiliser une image docker avec l’outil exiftool intallé.
 Tapez la commande :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>	docker run -it tanguybron/exiftool_img
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker run -it tanguybron/exiftool_img
 </pre></div>
 </div>
 <p>Vous aurez l’image directement dans votre home directory dès la connexion. Tapez la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code> pour lister les fichiers et dossiers du répertoire courrant.</p>

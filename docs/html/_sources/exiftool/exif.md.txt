@@ -15,7 +15,7 @@ Lorsque vous prenez une photo avec votre smartphone, vous pouvez la retrouver et
 Exiftool vous permet très facilement de lire ces métadonnées de vos photos : 
 
 ```shell
-    exiftool <image.jpg>
+$ exiftool <image.jpg>
 ```
 
 ### Pourquoi les Métadonnées sont importantes dans le monde de la cybersécurité ?
@@ -36,7 +36,7 @@ Vous pouvez retrouver tous les types de fichiers compatibles avec exiftool sur l
 Pour que cela soit plus simple, nous vous proposons d'utiliser une image docker avec l'outil exiftool intallé.
 Tapez la commande : 
 ```shell
-	docker run -it tanguybron/exiftool_img
+$ docker run -it tanguybron/exiftool_img
 ```
 Vous aurez l'image directement dans votre home directory dès la connexion. Tapez la commande ```ls``` pour lister les fichiers et dossiers du répertoire courrant.
 
