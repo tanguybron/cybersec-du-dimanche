@@ -164,6 +164,8 @@ Sur la machine victime, tapez :
 $ ping 140.82.121.4
 ```
 
+**Observations depuis la machine attaquante :**
+
 ![image ping_victime](./images/ping_victime.png)
 
 Oui ! Effectivement ! On voit bien que l'attaque a fonctionné. Vous voyez sur la machine attaquante que la victime a envoyé une requête aux serveurs de github!
