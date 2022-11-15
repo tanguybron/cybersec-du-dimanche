@@ -42,6 +42,8 @@ Ce schéma résume bien l’attaque :
 
 Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : [docker-compose.yml](./docker-compose.yml)
 
+#### Lancement de l'environnement
+
 Maintenant que vous avez téléchargé le fichier docker-compose.yml, vous pouvez récupérer et lancer les machines utiles pour ce tutoriel en tapant la commande : 
 
 ```shell
@@ -57,3 +59,44 @@ Vous devriez voir une réponse similaire à celle ci-dessous :
 
 ![image conteneurs](./images/conteneurs.png)
 
+Maintenant, ouvrons 2 Terminal séparés et connectons nous aux deux machines : 
+Pour utiliser la machine attaquante, tapez la commande : 
+```shell
+$ docker exec -it attaquant /bin/bash
+```
+
+Pour utiliser la machine victime, tapez la commande : 
+```shell
+$ docker exec -it victime /bin/bash
+```
+
+Vous êtes maintenant connecté aux deux machines et vous devriez avoir deux Terminal ouverts comme cela : 
+![image terminal](./images/terminal.png)
+
+
+#### Vérification de la Configuration
+
+Regardons les adresses ip de nos deux machines à l'aide de la commande : 
+```shell
+$ ifconfig
+```
+
+Vous obtenez normalement une réponse comme suit : 
+![image ifconfig](./images/ifconfig.png)
+
+On voit bien que la machine attaquante a pour adresse IP **10.5.0.2** et la machine victime **10.5.0.3**.
+
+
+Vérifions maintenant la connectivité entre les différentes machines. Sur la machine attaquante, utilisons la commande **ping** afin de voir si la machine victime nous répond : 
+```shell
+$ ping 10.5.0.3
+```
+(Tapez Ctrl+C pour arrêter l'exécution de la commande)
+
+Vous devriez voir cela : 
+![image ping](./images/ping.png)
+
+Les paquets circulent bien, donc tout est bien configuré.
+
+
+#### L'attaque

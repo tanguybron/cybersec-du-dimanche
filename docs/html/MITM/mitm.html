@@ -66,7 +66,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tutoriel">2.2. Tutoriel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mitm-dans-un-environnement-dedie">2.2.1. MITM dans un environnement dédié</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mitm-dans-un-environnement-dedie">2.2.1. MITM dans un environnement dédié</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lancement-de-l-environnement">2.2.1.1. Lancement de l’environnement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verification-de-la-configuration">2.2.1.2. Vérification de la Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#l-attaque">2.2.1.3. L’attaque</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -133,6 +138,8 @@ Ce schéma résume bien l’attaque :</p>
 <section id="mitm-dans-un-environnement-dedie">
 <h3><span class="section-number">2.2.1. </span>MITM dans un environnement dédié<a class="headerlink" href="#mitm-dans-un-environnement-dedie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : <a class="reference download internal" download="" href="../_downloads/d513ecdd373e16b75032b606b071f2f1/docker-compose.yml"><span class="xref download myst">docker-compose.yml</span></a></p>
+<section id="lancement-de-l-environnement">
+<h4><span class="section-number">2.2.1.1. </span>Lancement de l’environnement<a class="headerlink" href="#lancement-de-l-environnement" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Maintenant que vous avez téléchargé le fichier docker-compose.yml, vous pouvez récupérer et lancer les machines utiles pour ce tutoriel en tapant la commande :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
 </pre></div>
@@ -143,6 +150,39 @@ Ce schéma résume bien l’attaque :</p>
 </div>
 <p>Vous devriez voir une réponse similaire à celle ci-dessous :</p>
 <p><img alt="image conteneurs" src="../_images/conteneurs.png" /></p>
+<p>Maintenant, ouvrons 2 Terminal séparés et connectons nous aux deux machines :
+Pour utiliser la machine attaquante, tapez la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it attaquant /bin/bash
+</pre></div>
+</div>
+<p>Pour utiliser la machine victime, tapez la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -it victime /bin/bash
+</pre></div>
+</div>
+<p>Vous êtes maintenant connecté aux deux machines et vous devriez avoir deux Terminal ouverts comme cela :
+<img alt="image terminal" src="../_images/terminal.png" /></p>
+</section>
+<section id="verification-de-la-configuration">
+<h4><span class="section-number">2.2.1.2. </span>Vérification de la Configuration<a class="headerlink" href="#verification-de-la-configuration" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Regardons les adresses ip de nos deux machines à l’aide de la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ifconfig
+</pre></div>
+</div>
+<p>Vous obtenez normalement une réponse comme suit :
+<img alt="image ifconfig" src="../_images/ifconfig.png" /></p>
+<p>On voit bien que la machine attaquante a pour adresse IP <strong>10.5.0.2</strong> et la machine victime <strong>10.5.0.3</strong>.</p>
+<p>Vérifions maintenant la connectivité entre les différentes machines. Sur la machine attaquante, utilisons la commande <strong>ping</strong> afin de voir si la machine victime nous répond :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ping <span class="m">10</span>.5.0.3
+</pre></div>
+</div>
+<p>(Tapez Ctrl+C pour arrêter l’exécution de la commande)</p>
+<p>Vous devriez voir cela :
+<img alt="image ping" src="../_images/ping.png" /></p>
+<p>Les paquets circulent bien, donc tout est bien configuré.</p>
+</section>
+<section id="l-attaque">
+<h4><span class="section-number">2.2.1.3. </span>L’attaque<a class="headerlink" href="#l-attaque" title="Lien permanent vers cette rubrique"></a></h4>
+</section>
 </section>
 </section>
 </section>
