@@ -99,5 +99,19 @@ Vous devriez voir cela :
 
 Les paquets circulent bien, donc tout est bien configuré.
 
+Il est aussi recommandé de taper la commande : 
+
+```shell
+$ ping 10.5.0.1
+```
+
+Pour vérifier la connectivité avec le routeur.
 
 ### L'attaque
+
+Affichons tout d'abord la table arp de nos deux machines : 
+```shell
+$ arp -n
+```
+
+![image arp](./images/arp.png)
