@@ -42,7 +42,7 @@ Ce schéma résume bien l’attaque :
 
 Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : [docker-compose.yml](./docker-compose.yml)
 
-#### Lancement de l'environnement
+### Lancement de l'environnement
 
 Maintenant que vous avez téléchargé le fichier docker-compose.yml, vous pouvez récupérer et lancer les machines utiles pour ce tutoriel en tapant la commande : 
 
@@ -74,7 +74,7 @@ Vous êtes maintenant connecté aux deux machines et vous devriez avoir deux Ter
 ![image terminal](./images/terminal.png)
 
 
-#### Vérification de la Configuration
+### Vérification de la Configuration
 
 Regardons les adresses ip de nos deux machines à l'aide de la commande : 
 ```shell
@@ -94,9 +94,10 @@ $ ping 10.5.0.3
 (Tapez Ctrl+C pour arrêter l'exécution de la commande)
 
 Vous devriez voir cela : 
+
 ![image ping](./images/ping.png)
 
 Les paquets circulent bien, donc tout est bien configuré.
 
 
-#### L'attaque
+### L'attaque
