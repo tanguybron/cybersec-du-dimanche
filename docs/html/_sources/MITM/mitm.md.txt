@@ -134,3 +134,36 @@ $ cat /proc/sys/net/ipv4/ip_forward
 Vous devez lire un **1** en réponse à cette commande.
 
 ### Lancement de l'attaque
+
+Nous allons maintenant lancer l'attaque. Pour bien voir ce qu'il se passe, nous allons ouvrir un autre Terminal en se connectant une deuxième fois à la machine attaquante. (voir commande plus haut) 
+A ce stade vous avez donc 3 applications Terminal ouvertes : 2 sur la machine attaquante 1 sur la machine victime.
+
+Sur notre machine attaquante, nous allons lancer l'**arpspoof** qui consiste à faire croire à la victime que nous sommes le routeur et au routeur que nous sommes la victime (empoisonnement de cache arp): 
+
+```shell
+$ arpspoof -t 10.5.0.3 10.5.0.1
+```
+
+On peut observer les requêtes ARP envoyées lorsque cette commande est exécutée : 
+
+![image poisoning](./images/poisoning.png)
+
+Maintenant que l'empoisonnement de la table ARP est lancé, il faut laisser les requêtes s'envoyer. Laissez le terminal de côté. Nous allons maintenant écouter et visualiser les requêtes qui passent par notre machine attaquante. Sur l'autre Terminal de la machine attaquante tapez : 
+
+```shell
+$ tcpdump -i eth0
+```
+
+Dès que la commande est exécutée, nous voyons circuler les requêtes ARP sur le réseau.
+
+Que se passe-t-il si maintenant la machine victime ping les serveurs de github ? (adresse des serveurs github : **140.82.121.4**)
+
+Sur la machine victime, tapez : 
+
+```shell
+$ ping 140.82.121.4
+```
+
+![image ping_victime](./images/ping_victime.png)
+
+Oui ! Effectivement ! On voit bien que l'attaque a fonctionné. Vous voyez sur la machine attaquante que la victime a envoyé une requête aux serveurs de github!

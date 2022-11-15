@@ -206,6 +206,26 @@ Nous devons donc activer l’ip forwarding sur notre machine attaquante. Si nous
 </section>
 <section id="lancement-de-l-attaque">
 <h3><span class="section-number">2.2.5. </span>Lancement de l’attaque<a class="headerlink" href="#lancement-de-l-attaque" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Nous allons maintenant lancer l’attaque. Pour bien voir ce qu’il se passe, nous allons ouvrir un autre Terminal en se connectant une deuxième fois à la machine attaquante. (voir commande plus haut)
+A ce stade vous avez donc 3 applications Terminal ouvertes : 2 sur la machine attaquante 1 sur la machine victime.</p>
+<p>Sur notre machine attaquante, nous allons lancer l”<strong>arpspoof</strong> qui consiste à faire croire à la victime que nous sommes le routeur et au routeur que nous sommes la victime (empoisonnement de cache arp):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ arpspoof -t <span class="m">10</span>.5.0.3 <span class="m">10</span>.5.0.1
+</pre></div>
+</div>
+<p>On peut observer les requêtes ARP envoyées lorsque cette commande est exécutée :</p>
+<p><img alt="image poisoning" src="../_images/poisoning.png" /></p>
+<p>Maintenant que l’empoisonnement de la table ARP est lancé, il faut laisser les requêtes s’envoyer. Laissez le terminal de côté. Nous allons maintenant écouter et visualiser les requêtes qui passent par notre machine attaquante. Sur l’autre Terminal de la machine attaquante tapez :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ tcpdump -i eth0
+</pre></div>
+</div>
+<p>Dès que la commande est exécutée, nous voyons circuler les requêtes ARP sur le réseau.</p>
+<p>Que se passe-t-il si maintenant la machine victime ping les serveurs de github ? (adresse des serveurs github : <strong>140.82.121.4</strong>)</p>
+<p>Sur la machine victime, tapez :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ ping <span class="m">140</span>.82.121.4
+</pre></div>
+</div>
+<p><img alt="image ping_victime" src="../_images/ping_victime.png" /></p>
+<p>Oui ! Effectivement ! On voit bien que l’attaque a fonctionné. Vous voyez sur la machine attaquante que la victime a envoyé une requête aux serveurs de github!</p>
 </section>
 </section>
 </section>
