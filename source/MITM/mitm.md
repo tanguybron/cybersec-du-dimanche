@@ -41,3 +41,19 @@ Ce schéma résume bien l’attaque :
 ### MITM dans un environnement dédié
 
 Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : [docker-compose.yml](./docker-compose.yml)
+
+Maintenant que vous avez téléchargé le fichier docker-compose.yml, vous pouvez récupérer et lancer les machines utiles pour ce tutoriel en tapant la commande : 
+
+```shell
+$ docker-compose up -d
+```
+
+Lorsque l'opération est finie, vous pouvez lister vos conteneurs avec la commande :
+
+```shell
+$ docker ps -a
+```
+Vous devriez voir une réponse similaire à celle ci-dessous : 
+
+![image conteneurs](./images/conteneurs.png)
+

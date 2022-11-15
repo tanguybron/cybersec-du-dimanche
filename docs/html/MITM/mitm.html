@@ -40,7 +40,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Stéganographie</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Prise en main</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../prise-en-main/docker.html">1. Docker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stéganographie</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../exiftool/exif.html">1. Exiftool</a></li>
 </ul>
@@ -129,6 +133,16 @@ Ce schéma résume bien l’attaque :</p>
 <section id="mitm-dans-un-environnement-dedie">
 <h3><span class="section-number">2.2.1. </span>MITM dans un environnement dédié<a class="headerlink" href="#mitm-dans-un-environnement-dedie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il vous est possible de suivre et effectuer les mêmes étapes de ce tutoriel depuis votre machine en téléchargeant ce fichier : <a class="reference download internal" download="" href="../_downloads/d513ecdd373e16b75032b606b071f2f1/docker-compose.yml"><span class="xref download myst">docker-compose.yml</span></a></p>
+<p>Maintenant que vous avez téléchargé le fichier docker-compose.yml, vous pouvez récupérer et lancer les machines utiles pour ce tutoriel en tapant la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker-compose up -d
+</pre></div>
+</div>
+<p>Lorsque l’opération est finie, vous pouvez lister vos conteneurs avec la commande :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker ps -a
+</pre></div>
+</div>
+<p>Vous devriez voir une réponse similaire à celle ci-dessous :</p>
+<p><img alt="image conteneurs" src="../_images/conteneurs.png" /></p>
 </section>
 </section>
 </section>

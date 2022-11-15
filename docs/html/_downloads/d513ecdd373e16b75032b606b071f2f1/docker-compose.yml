@@ -2,7 +2,7 @@ version: "2"
 services:
   machine_attaque:
     container_name: attaquant
-    build: ./attaquant
+    image: tanguybron/mitm:attaque
     stdin_open: true
     tty: true
     restart: always
@@ -11,7 +11,7 @@ services:
         ipv4_address: 10.5.0.2
   machine_victime:
     container_name: victime
-    build: ./victime
+    image: tanguybron/mitm:victime
     stdin_open: true
     tty: true
     restart: always
