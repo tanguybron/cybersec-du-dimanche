@@ -107,7 +107,7 @@ $ ping 10.5.0.1
 
 Pour vérifier la connectivité avec le routeur.
 
-### L'attaque
+### Mise en place de l'attaque
 
 Affichons tout d'abord la table arp de nos deux machines : 
 ```shell
@@ -115,3 +115,22 @@ $ arp -n
 ```
 
 ![image arp](./images/arp.png)
+
+Afin que les requêtes puissent circuler entre la machine victime et le routeur, il faut que la machine attaquante puisse renvoyer les requêtes reçues.
+Nous devons donc activer l'ip forwarding sur notre machine attaquante. Si nous manquons cette étape, soit il s'agit d'un choix de l'attaquant de bloquer toutes les requêtes de sa victime afin de lui bloquer toute connectivité, ou alors il s'agit d'une erreur d'inatention qui empechera l'attaquant d'observer ce que la victime fait sur sa machine.
+
+Voici comment activer l'ip forwarding : 
+
+```shell
+$ echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+
+Pour vérifier que cela est bien activé : 
+
+```shell
+$ cat /proc/sys/net/ipv4/ip_forward
+```
+
+Vous devez lire un **1** en réponse à cette commande.
+
+### Lancement de l'attaque
